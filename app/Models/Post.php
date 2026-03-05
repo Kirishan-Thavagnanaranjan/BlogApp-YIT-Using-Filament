@@ -13,6 +13,7 @@ class Post extends Model
         "slug",
         "category_id",
         "image",
+        "color",
         "body",
         "tags",
         "published",
