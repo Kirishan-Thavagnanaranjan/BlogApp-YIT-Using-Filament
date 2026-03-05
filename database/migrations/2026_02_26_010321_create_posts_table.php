@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image');
             $table->text('body');
             $table->json('tags');
+            $table->string('color');
             $table->boolean('published');
             $table->date('published_at');
             $table->timestamps();
