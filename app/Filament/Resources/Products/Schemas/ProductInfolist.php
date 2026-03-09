@@ -47,6 +47,8 @@ class ProductInfolist
                             ]),
                         Tab::make("Price & Stock")
                         ->icon(Heroicon::CurrencyRupee)
+                        ->badge(10)
+                        ->badgeColor("info")
                             ->schema([
                                 TextEntry::make("price")
                                     ->icon(Heroicon::CurrencyDollar)
@@ -59,6 +61,7 @@ class ProductInfolist
                                     ->color("primary"),
                             ]),
                         Tab::make("Media & Status")
+                        ->icon(Heroicon::Camera)
                             ->schema([
                                 ImageEntry::make("image")
                                     ->disk("public")
@@ -71,7 +74,8 @@ class ProductInfolist
                                     ->boolean()
                             ])
 
-                    ])->columnSpanFull(),
+                    ])->columnSpanFull()
+                    ->vertical(),
             //     Section::make("Product Info")
             //         ->schema([
             //             TextEntry::make("id")
