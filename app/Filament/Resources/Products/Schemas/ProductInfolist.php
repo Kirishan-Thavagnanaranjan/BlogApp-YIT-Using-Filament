@@ -38,7 +38,7 @@ class ProductInfolist
                     ->label("Product creation date")
                     ->weight("bold")
                     ->color("info")
-                    ->date("d-m-y")
+                    ->date("d-m-Y")
                 ])->columnSpanFull(),
                 Section::make("Price & Stock")
                 ->schema([
