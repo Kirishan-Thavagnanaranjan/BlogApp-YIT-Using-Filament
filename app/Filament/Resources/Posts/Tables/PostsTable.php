@@ -19,11 +19,15 @@ class PostsTable
         return $table
             ->columns([
                 ImageColumn::make('image') ->disk("public"),
-                TextColumn::make('title'),
+                TextColumn::make('title')->sortable(),
                 TextColumn::make('slug'),
-                TextColumn::make('category.name'),
-                ColorColumn::make("color")
-            ])
+                TextColumn::make('category.name')->sortable(),
+                ColorColumn::make("color"),
+                TextColumn::make("created_at")
+                ->label("Created at")
+                ->dateTime()
+                ->sortable()                
+             ])//->defaultSort("title","asc")
             ->filters([
                 //
             ])
