@@ -29,7 +29,7 @@ class PostForm
                         Group::make()
                             ->schema([
                                 TextInput::make('title')
-                                ->rules(["required","min:3","max:10"])
+                                ->rules(["required","min:3","max:30"])
                                 ->ascii(),
                                 TextInput::make('slug')
                                 ->required()
