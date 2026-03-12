@@ -20,7 +20,7 @@ class ProductInfolist
                 Tabs::make("tabs")
                     ->tabs([
                         Tab::make("Product Info")
-                        ->icon(Heroicon::Gift)
+                            ->icon(Heroicon::Gift)
                             ->schema([
                                 TextEntry::make("id")
                                     ->label("Product ID")
@@ -46,9 +46,9 @@ class ProductInfolist
                                     ->date("d-m-y")
                             ]),
                         Tab::make("Price & Stock")
-                        ->icon(Heroicon::CurrencyRupee)
-                        ->badge(10)
-                        ->badgeColor("info")
+                            ->icon(Heroicon::CurrencyRupee)
+                            ->badge(10)
+                            ->badgeColor("info")
                             ->schema([
                                 TextEntry::make("price")
                                     ->icon(Heroicon::CurrencyDollar)
@@ -61,7 +61,7 @@ class ProductInfolist
                                     ->color("primary"),
                             ]),
                         Tab::make("Media & Status")
-                        ->icon(Heroicon::Camera)
+                            ->icon(Heroicon::Camera)
                             ->schema([
                                 ImageEntry::make("image")
                                     ->disk("public")
@@ -76,105 +76,105 @@ class ProductInfolist
 
                     ])->columnSpanFull()
                     ->vertical(),
-            //     Section::make("Product Info")
-            //         ->schema([
-            //             TextEntry::make("id")
-            //                 ->label("Product ID")
-            //                 ->weight("bold")
-            //                 ->color("primary"),
-            //             TextEntry::make("name")
-            //                 ->label("Product Name")
-            //                 ->weight("bold")
-            //                 ->color("primary"),
-            //             TextEntry::make("sku")
-            //                 ->label("Product sku")
-            //                 ->weight("bold")
-            //                 ->color("success")
-            //                 ->badge(),
-            //             TextEntry::make(name: "description")
-            //                 ->label("Product Description")
-            //                 ->weight("bold")
-            //                 ->color("primary"),
-            //             TextEntry::make(name: "created_at")
-            //                 ->label("Product creation date")
-            //                 ->weight("bold")
-            //                 ->color("info")
-            //                 ->date("d-m-y")
-            //         ])->columnSpanFull(),
-            //     Section::make("Price & Stock")
-            //         ->schema([
-            //             TextEntry::make("price")
-            //                 ->icon(Heroicon::CurrencyDollar)
-            //                 ->label("Product price")
-            //                 ->weight("bold")
-            //                 ->color("primary"),
-            //             TextEntry::make("stock")
-            //                 ->label("Stock")
-            //                 ->weight("bold")
-            //                 ->color("primary"),
-            //         ])->columnSpanFull(),
-            //     Section::make("Media & Status")
-            //         ->schema([
-            //             ImageEntry::make("image")
-            //                 ->disk("public")
-            //                 ->label("Product Image"),
-            //             IconEntry::make("is_active")
-            //                 ->label("Is Active")
-            //                 ->boolean(),
-            //             IconEntry::make("is_featured")
-            //                 ->label("Is Featured")
-            //                 ->boolean()
-            //         ])->columnSpanFull()
-             ]);
+                //     Section::make("Product Info")
+                //         ->schema([
+                //             TextEntry::make("id")
+                //                 ->label("Product ID")
+                //                 ->weight("bold")
+                //                 ->color("primary"),
+                //             TextEntry::make("name")
+                //                 ->label("Product Name")
+                //                 ->weight("bold")
+                //                 ->color("primary"),
+                //             TextEntry::make("sku")
+                //                 ->label("Product sku")
+                //                 ->weight("bold")
+                //                 ->color("success")
+                //                 ->badge(),
+                //             TextEntry::make(name: "description")
+                //                 ->label("Product Description")
+                //                 ->weight("bold")
+                //                 ->color("primary"),
+                //             TextEntry::make(name: "created_at")
+                //                 ->label("Product creation date")
+                //                 ->weight("bold")
+                //                 ->color("info")
+                //                 ->date("d-m-y")
+                //         ])->columnSpanFull(),
+                //     Section::make("Price & Stock")
+                //         ->schema([
+                //             TextEntry::make("price")
+                //                 ->icon(Heroicon::CurrencyDollar)
+                //                 ->label("Product price")
+                //                 ->weight("bold")
+                //                 ->color("primary"),
+                //             TextEntry::make("stock")
+                //                 ->label("Stock")
+                //                 ->weight("bold")
+                //                 ->color("primary"),
+                //         ])->columnSpanFull(),
+                //     Section::make("Media & Status")
+                //         ->schema([
+                //             ImageEntry::make("image")
+                //                 ->disk("public")
+                //                 ->label("Product Image"),
+                //             IconEntry::make("is_active")
+                //                 ->label("Is Active")
+                //                 ->boolean(),
+                //             IconEntry::make("is_featured")
+                //                 ->label("Is Featured")
+                //                 ->boolean()
+                //         ])->columnSpanFull()
+                //]);
                 Section::make("Product Info")
-                ->schema([
-                    TextEntry::make("id")
-                    ->label("Product ID")
-                    ->weight("bold")
-                    ->color("primary"),
-                    TextEntry::make("name")
-                    ->label("Product Name")
-                    ->weight("bold")
-                    ->color("primary"),
-                    TextEntry::make("sku")
-                    ->label("Product sku")
-                    ->weight("bold")
-                    ->color("success")
-                    ->badge(),
-                    TextEntry::make(name: "description")
-                    ->label("Product Description")
-                    ->weight("bold")
-                    ->color("primary"),
-                    TextEntry::make(name: "created_at")
-                    ->label("Product creation date")
-                    ->weight("bold")
-                    ->color("info")
-                    ->date("d-m-Y")
-                ])->columnSpanFull(),
+                    ->schema([
+                        TextEntry::make("id")
+                            ->label("Product ID")
+                            ->weight("bold")
+                            ->color("primary"),
+                        TextEntry::make("name")
+                            ->label("Product Name")
+                            ->weight("bold")
+                            ->color("primary"),
+                        TextEntry::make("sku")
+                            ->label("Product sku")
+                            ->weight("bold")
+                            ->color("success")
+                            ->badge(),
+                        TextEntry::make(name: "description")
+                            ->label("Product Description")
+                            ->weight("bold")
+                            ->color("primary"),
+                        TextEntry::make(name: "created_at")
+                            ->label("Product creation date")
+                            ->weight("bold")
+                            ->color("info")
+                            ->date("d-m-Y")
+                    ])->columnSpanFull(),
                 Section::make("Price & Stock")
-                ->schema([
-                    TextEntry::make("price")
-                    ->icon(Heroicon::CurrencyDollar)
-                    ->label("Product price")
-                    ->weight("bold")
-                    ->color("primary"),
-                    TextEntry::make("stock")
-                    ->label("Stock")
-                    ->weight("bold")
-                    ->color("primary"),
-                ])->columnSpanFull(),
+                    ->schema([
+                        TextEntry::make("price")
+                            ->icon(Heroicon::CurrencyDollar)
+                            ->label("Product price")
+                            ->weight("bold")
+                            ->color("primary"),
+                        TextEntry::make("stock")
+                            ->label("Stock")
+                            ->weight("bold")
+                            ->color("primary"),
+                    ])->columnSpanFull(),
                 Section::make("Media & Status")
-                ->schema([
-                    ImageEntry::make("image")
-                    ->disk("public")
-                    ->label("Product Image"),
-                    IconEntry::make("is_active")
-                    ->label("Is Active")
-                    ->boolean(),
-                    IconEntry::make("is_featured")
-                    ->label("Is Featured")
-                    ->boolean()
-                ])
+                    ->schema([
+                        ImageEntry::make("image")
+                            ->disk("public")
+                            ->label("Product Image"),
+                        IconEntry::make("is_active")
+                            ->label("Is Active")
+                            ->boolean(),
+                        IconEntry::make("is_featured")
+                            ->label("Is Featured")
+                            ->boolean()
+                    ])
             ]);
     }
 }
