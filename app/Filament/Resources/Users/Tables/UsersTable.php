@@ -16,7 +16,7 @@ class UsersTable
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('email'),
-                TextColumn::make('password')
+
             ])
             ->filters([
                 //
