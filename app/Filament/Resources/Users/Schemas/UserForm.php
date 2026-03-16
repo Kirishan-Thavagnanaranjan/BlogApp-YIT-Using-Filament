@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\QueryBuilder\Constraints\Operators\Operator;
 use Filament\Schemas\Schema;
-
-use Symfony\Component\Mime\Email;
+use Filament\Support\Enums\Operation;
 
 class UserForm
 {
@@ -18,6 +18,9 @@ class UserForm
                 TextInput::make("password")
                 ->password()
                 ->revealable()
+               // ->hiddenOn(Operation::Edit)
+               ->visibleOn(Operation::Create)
+
             ]);
     }
 }
