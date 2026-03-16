@@ -51,7 +51,8 @@ class PostsTable
                     SelectFilter::make("category_id")
                     ->label("Select Category")
                     ->relationship("category","name")
-                    ->preload()
+                    //->preload()
+                    ->searchable()
                     
 
             ])
