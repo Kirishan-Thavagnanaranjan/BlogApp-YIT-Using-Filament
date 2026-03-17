@@ -9,6 +9,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Columns\ColorColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
@@ -23,16 +24,29 @@ class PostsTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->disk("public"),
-                TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug')->searchable(),
-                TextColumn::make('category.name')->sortable()->searchable(),
-                ColorColumn::make("color"),
+                TextColumn::make("id")
+                ->label("ID")
+                ->toggleable(isToggledHiddenByDefault:true),
+                ImageColumn::make('image')->disk("public")
+                ->toggleable(),
+                TextColumn::make('title')->sortable()->searchable()->toggleable(),
+                TextColumn::make('slug')->searchable()->toggleable(),
+                TextColumn::make('category.name')->sortable()->searchable()->toggleable(),
+                ColorColumn::make("color")
+                ->toggleable(),
                 TextColumn::make("created_at")->searchable()
                     ->label("Created at")
                     ->dateTime()
                     ->sortable()
-            ]) //->defaultSort("title","asc")
+                    ->toggleable(),
+                TextColumn::make("tags")
+                ->label("Tags")
+                ->toggleable(isToggledHiddenByDefault:true),
+                IconColumn::make("published")
+                ->boolean()
+                ->toggleable(isToggledHiddenByDefault:true)
+            ]) //->defaultSort("title","asc"),
+                
             ->filters([
                 Filter::make("created_at")
                     ->label("Creation date")
