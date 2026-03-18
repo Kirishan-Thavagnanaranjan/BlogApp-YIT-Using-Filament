@@ -2,12 +2,17 @@
 
 namespace App\Filament\Resources\Posts\Tables;
 
+use App\Models\Post;
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\DatePicker;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ColorColumn;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -52,7 +57,7 @@ class PostsTable
                     ->label("Creation date")
                     ->schema([
                         DatePicker::make("created_at")
-                            ->label("select Date : ")
+                            ->label("select Date")
                     ])
 
                     ->query(function ($query, $data) {
@@ -72,10 +77,24 @@ class PostsTable
             ])
 
             ->recordActions([
+                ActionGroup::make([
                 EditAction::make(),
                 ViewAction::make(),
                 DeleteAction::make()
+                ]),
+                Action::make("status")
+                ->label("Status change")
+                ->icon(Heroicon::AdjustmentsVertical)
+                ->schema([
+                    Checkbox::make("published")
+                    ->default(fn (Post $record) => $record -> published)
+                ])
+                ->action(function(array $data , Post $record ){
+                    $record ->published =$data["published"];
+                    $record ->save();
+                })
             ])
+            
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
