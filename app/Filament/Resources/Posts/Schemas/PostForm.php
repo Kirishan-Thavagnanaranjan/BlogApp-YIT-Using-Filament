@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
-use App\Models\category;
+use App\Models\Category;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\DatePicker;
@@ -39,7 +39,9 @@ class PostForm
                                 ]),
                                 Select::make("category_id")
                                     ->label('category')
-                                    ->options(category::all()->pluck('name', 'id')),
+                                    //->options(category::all()->pluck('name', 'id')),
+                                    ->relationship("Category","name")
+                                    ->searchable(),
                                 ColorPicker::make('color'),
                             ])->Columns(2),
 
