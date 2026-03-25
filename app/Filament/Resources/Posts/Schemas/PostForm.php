@@ -16,6 +16,8 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Schemas\Components\Group;
 use Filament\Support\Icons\Heroicon;
 
+use function Laravel\Prompts\select;
+
 class PostForm
 {
     public static function configure(Schema $schema): Schema
@@ -60,7 +62,10 @@ class PostForm
 
                         Section::make("Meta")
                             ->schema([
-                                TagsInput::make("tags"),
+                                select::make("tags")
+                                ->label("Tags")
+                                ->relationship("tags" , "name")
+                                ->multiple(),
                                 Checkbox::make('published'),
                                 DatePicker::make('published_at')
                             ])

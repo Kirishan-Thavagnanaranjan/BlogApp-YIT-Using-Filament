@@ -18,11 +18,22 @@ return new class extends Migration
             $table->string('category_id');
             $table->string('image')->nullable();
             $table->text('body');
-            $table->json('tags');
             $table->string('color');
             $table->boolean('published');
             $table->date('published_at');
             $table->timestamps();
+        });
+
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->foreignId("post_id")->constrained()->cascadeOnDelete();
+            $table->foreignId("tag_id")->constrained()->cascadeOnDelete();
+            $table->primary(["post_id" , "tag_id"]);
         });
     }
 
@@ -31,6 +42,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('post_tag');
+        Schema::dropIfExists('tags');
         Schema::dropIfExists('posts');
     }
 };
