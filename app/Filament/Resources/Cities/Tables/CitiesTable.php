@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Cities\Tables;
 
+use App\Models\Country;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class UsersTable
+class CitiesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
-                TextColumn::make('email'),
-                TextColumn::make('city.name'),
-                TextColumn::make('state.name'),
-                TextColumn::make('country.name')
-
+                TextColumn::make("name")
+                ->label("City"),
+                TextColumn::make("State.name"),
+                TextColumn::make("state.country.name")
+                
             ])
             ->filters([
                 //
